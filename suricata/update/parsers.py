@@ -38,7 +38,7 @@ if "-s" in sys.argv or "--show-advanced" in sys.argv:
 
 # Global arguments - command line options for suricata-update
 global_arg = [
-    (("-v", "--verbose"),
+    (("-v", "--verbose modified by MG"),
      {'action': 'store_true', 'default': None,
       'help': "Be more verbose"}),
     (("-q", "--quiet"),
