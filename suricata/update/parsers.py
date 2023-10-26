@@ -220,8 +220,6 @@ def parse_commands(subparsers, global_parser):
         "update-sources", parents=[global_parser]))
     commands.enablesource.register(subparsers.add_parser(
         "enable-source", parents=[global_parser]))
-    commands.listsourcegroups.register(subparsers.add_parser(
-        "list-source-groups", parents=[global_parser]))
     commands.disablesource.register(subparsers.add_parser(
         "disable-source", parents=[global_parser]))
     commands.removesource.register(subparsers.add_parser(
