@@ -226,6 +226,8 @@ def parse_commands(subparsers, global_parser):
         "remove-source", parents=[global_parser]))
     commands.checkversions.register(subparsers.add_parser(
         "check-versions", parents=[global_parser]))
+    commands.listsourcegroups.register(subparsers.add_parser(
+        "list-source-groups", parents=[global_parser]))
 
 
 def parse_arg():
@@ -252,6 +254,7 @@ def parse_arg():
     remove-source              Remove an enabled or disabled source
     add-source                 Add a new source by URL
     check-versions             Check version of suricata-update
+    list-source-groups         List all existing groups within a source
 """
 
     parse_commands(subparsers, global_parser)

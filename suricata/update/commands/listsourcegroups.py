@@ -14,11 +14,31 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 # 02110-1301, USA.
 
-from suricata.update.commands import addsource
-from suricata.update.commands import listsources
-from suricata.update.commands import updatesources
-from suricata.update.commands import enablesource
-from suricata.update.commands import disablesource
-from suricata.update.commands import removesource
-from suricata.update.commands import checkversions
-from suricata.update.commands import listsourcegroups
+from __future__ import print_function
+
+import os
+import logging
+
+import yaml
+
+from suricata.update import config
+from suricata.update import sources
+
+try:
+    input = raw_input
+except:
+    pass
+
+logger = logging.getLogger()
+
+default_source = "et/open"
+
+def register(parser):
+    parser.add_argument("name")
+    parser.add_argument("params", nargs="*", metavar="param=val")
+    parser.set_defaults(func=enable_source)
+
+def enable_source():
+    name = config.args().name
+
+    logger.info("Ruleset %s has following rule groups:", str(name))
