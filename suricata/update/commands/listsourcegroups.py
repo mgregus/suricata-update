@@ -22,12 +22,7 @@ import logging
 import yaml
 
 from suricata.update import config
-from suricata.update import sources
 
-try:
-    input = raw_input
-except:
-    pass
 
 logger = logging.getLogger()
 

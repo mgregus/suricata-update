@@ -44,7 +44,7 @@ args = {
         "suricata.update.data",
     ],
     "package_data": {"suricata.update.configs": ["*.conf", "*.yaml", "*.in"]},
-    "url": "https://github.com/OISF/suricata-update",
+    "url": "https://github.com/mgregus/suricata-update",
     "license": "GPLv2",
     "classifiers": [
         'License :: OSI Approved :: GNU General Public License v2 (GPLv2)',
