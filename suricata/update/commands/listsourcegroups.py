@@ -14,22 +14,3 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 # 02110-1301, USA.
 
-from __future__ import print_function
-
-import logging
-from suricata.update import config
-
-
-logger = logging.getLogger()
-
-default_source = "et/open"
-
-def register(parser):
-    parser.add_argument("name")
-    parser.add_argument("params", nargs="*", metavar="param=val")
-    parser.set_defaults(func=enable_source)
-
-def enable_source():
-    name = config.args().name
-
-    logger.info("Ruleset %s has following rule groups:", str(name))
